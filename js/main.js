@@ -22,6 +22,10 @@ window.onload = async function () {
         /* une fois qu'on click sur le pokemon on obtient les informations sur le nom du pokemon */
         pokemon.innerText = i.toString() + ". " + pokedex[i]["name"]. toUpperCase();
         pokemon.classList.add("pokemon-name");
+
+        /* une fois qu'on clique sur un pokemon ca nous l'affiche a gauche avec ses caractéristiques*/
+        pokemon.addEventListener("click", updatePokemon);
+
         document.getElementById("pokemon-list").append(pokemon);
     }
 
@@ -48,4 +52,8 @@ async function getPokemon(num) {
 
     pokedex[num]= {"name" : pokemonName, "img" : pokemonImg, "type" : pokemonType, "desc" : pokemonDesc}
 
+}
+
+function updatePokemon(){
+    document.getElementById("pokemon-img"). src = pokedex[this.id]["img"]
 }
