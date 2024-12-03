@@ -15,6 +15,7 @@ body{
     width: 250px;
     height: 500px;
     background-color: darkred;
+    text-align: center;
 }
 #pokemon-list{
     width: 250px;
@@ -22,4 +23,78 @@ body{
     background-color: darkblue;
     font-size: 18px;
     overflow-y: auto;
+}
+.pokemon-name{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+
+}
+#pokemon-info img {
+    width: 160px;
+    height: 160px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+}
+#pokemon-types{
+    margin-top: 10px;
+}
+.type-box{
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+
+}
+.fire{
+    background-color: orange;
+    color: white;
+}
+.grass{
+    background-color: green;
+    color: white;
+}
+.water{
+    background-color: blue;
+    color: white;
+}
+.ice{
+    background-color: lightblue;
+    color: black;
+}
+.electric{
+    background-color: gold;
+    color: black;
+}
+.fighting{
+    background-color: red;
+    color: white;
+}
+.flying{
+    background-color: skyblue;
+    color: black;
+}
+.bug{
+    background-color: yellowgreen;
+    color: white;
+}
+.psychic{
+    background-color: palevioletred;
+    color: white;
+}
+.fairy{
+    background-color: pink;
+    color: black;
+}
+.dragon{
+    background-color: teal;
+    color: white;
+}
+.poison{
+    background-color: darkviolet;
+    color: white;
 }
