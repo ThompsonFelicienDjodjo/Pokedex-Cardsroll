@@ -20,4 +20,6 @@ body{
     width: 250px;
     height: 500px;
     background-color: darkblue;
+    font-size: 18px;
+    overflow-y: auto;
 }

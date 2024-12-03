@@ -8,7 +8,24 @@ var pokedex={}; // {1 : {"name" : "bulbsaur", "img" : url, type : ["grass","pois
 /* function asynchrone  */
 
 window.onload = async function () {
-    getPokemon(1);
+    //getPokemon(1);
+
+    /* Ajoutons a chaque fois une valeur pour le pokemon suivant*/
+    for (let i = 1; i<= pokemonCount; i++) {
+        await getPokemon(i);
+        //<div id = "1" class="pokemon-name">BULBASAUR</div>
+        let pokemon = document.createElement("div")
+
+        /* une fois qu'on click sur le pokemon on obtient les infortions sur son numéro dans le pokedex situé du coté gauche */
+        pokemon.id = i;
+
+        /* une fois qu'on click sur le pokemon on obtient les informations sur le nom du pokemon */
+        pokemon.innerText = i.toString() + ". " + pokedex[i]["name"]. toUpperCase();
+        pokemon.classList.add("pokemon-name");
+        document.getElementById("pokemon-list").append(pokemon);
+    }
+
+    console.log(pokedex);
 }
 async function getPokemon(num) {
     let url = "https://pokeapi.co/api/v2/pokemon/" + num.toString();
@@ -17,7 +34,7 @@ async function getPokemon(num) {
 
     let res = await fetch(url);
     let pokemon = await res.json();
-    console.log(pokemon)
+    //console.log(pokemon)
     let pokemonName = pokemon["name"];
     let pokemonType = pokemon["types"];
     let pokemonImg = pokemon ["sprites"]["front_default"];
@@ -25,7 +42,10 @@ async function getPokemon(num) {
     res = await fetch(pokemon["species"]["url"]);
     let pokemonDesc = await res.json();
 
-    console.log(pokemonDesc);
+    //console.log(pokemonDesc);
 
+    pokemonDesc = pokemonDesc["flavor_text_entries"][9]["flavor_text"]
+
+    pokedex[num]= {"name" : pokemonName, "img" : pokemonImg, "type" : pokemonType, "desc" : pokemonDesc}
 
 }
