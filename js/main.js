@@ -58,7 +58,7 @@ async function getPokemon(num) {
 function updatePokemon(){
     document.getElementById("pokemon-img"). src = pokedex[this.id]["img"];
 
-    // Effacer le type précèdent
+    // En lever le type précèdent
     let typesDiv = document.getElementById("pokemon-types");
     while(!typesDiv.firstChild) {
         typesDiv.firstChild.remove();
